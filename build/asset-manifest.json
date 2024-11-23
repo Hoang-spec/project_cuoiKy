@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/static/css/main.213c076f.css",
+    "main.js": "/static/js/main.94e47dea.js",
+    "static/js/453.7a0f4abf.chunk.js": "/static/js/453.7a0f4abf.chunk.js",
+    "static/media/baner.png": "/static/media/baner.7897cda99e42643a330a.png",
+    "static/media/Untitled-Photoroom.png": "/static/media/Untitled-Photoroom.bb803093c2dd2495ec5a.png",
+    "static/media/lenovo-legion-5-pro-core-i7-11800h-16gb-512gb-rtx-3060-6gb-3678-3-Photoroom.png": "/static/media/lenovo-legion-5-pro-core-i7-11800h-16gb-512gb-rtx-3060-6gb-3678-3-Photoroom.24b8fa9339e368c28756.png",
+    "static/media/Remove-bg.ai_1731470373511.png": "/static/media/Remove-bg.ai_1731470373511.f9592b406a4f9db5ce70.png",
+    "static/media/removed-background.png": "/static/media/removed-background.f1b04e9ef7cfc3587f98.png",
+    "static/media/pngtree-smiling-girl-point-up-with-fingers-png-image_8800296.png": "/static/media/pngtree-smiling-girl-point-up-with-fingers-png-image_8800296.c184e6c2c9fac829016e.png",
+    "index.html": "/index.html",
+    "main.213c076f.css.map": "/static/css/main.213c076f.css.map",
+    "main.94e47dea.js.map": "/static/js/main.94e47dea.js.map",
+    "453.7a0f4abf.chunk.js.map": "/static/js/453.7a0f4abf.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.213c076f.css",
+    "static/js/main.94e47dea.js"
+  ]
+}

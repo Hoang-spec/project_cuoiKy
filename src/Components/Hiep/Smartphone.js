@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from "../image/Untitled-Photoroom.png";
 import ship from "../image/shipper.webp";
 import res from "../image/res.png";
+import footer from "../../images/fotter.png"
 import baohanh from "../image/baohanh.png";
 
 import "./Smartphone.css"
@@ -338,6 +339,9 @@ function App() {
             Gửi
           </a>
         </div>
+      </div>
+      <div className="footer">
+        <img src={footer}/>
       </div>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

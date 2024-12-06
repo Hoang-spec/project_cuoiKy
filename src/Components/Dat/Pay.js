@@ -32,7 +32,6 @@ function PayD() {
 
   return (
     <div style={{width : '1440px',
-      backgroundColor : 'black',
       color : 'white'
     }} className="pay-container">
       <h1>Thanh toán sản phẩm</h1>

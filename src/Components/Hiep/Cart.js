@@ -1,9 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
-import { CartContext } from "./CartContext";
-
-
-function CartH() {
+import { CartContext } from "../CartContext";
+function HCart() {
   const navigate = useNavigate();
   const { cartItems, updateCartItem, removeCartItem } = useContext(CartContext); // Thêm functions để update và remove items
 
@@ -14,11 +12,11 @@ function CartH() {
   );
   // Thêm chức năng cập nhật số lượng sản phẩm
   const handleIncreaseQuantity = (id) => {
-    updateCartItem(id, "increase");
+    updateCartItem(id, 'increase');
   };
 
   const handleDecreaseQuantity = (id) => {
-    updateCartItem(id, "decrease");
+    updateCartItem(id, 'decrease');
   };
 
   const handleRemoveItem = (id) => {
@@ -26,8 +24,9 @@ function CartH() {
   };
 
   function HandleCheckout() {
-    localStorage.setItem("tong", Totalprice);
-    navigate("/checkout");
+    localStorage.setItem('tong', Totalprice)
+    navigate("/checkout_pro");
+
   }
 
   const HandleBack = () => {
@@ -35,75 +34,47 @@ function CartH() {
   };
 
   return (
-    <div className="project">
-      <div className="tieude">
-        <button className="back" onClick={HandleBack}>
-          &lt; back
-        </button>
-        <div className="heading">Your cart : </div>
+    <div className="project_pro">
+      <div className="tieude_pro" style={{marginLeft : '200px'}}>
+        <h1>Your cart : </h1>
+        <p style={{width : '600px',
+            border : '1px solid red',
+            height : '30px',
+            paddingTop : '5px',
+            paddingLeft : '10px',
+            borderRadius : '4px',
+            backgroundColor : '#F8D6D6'
+        }}>You’ve got FREE delivery. Start checkout now!</p>
       </div>
-      <div style={{display : 'flex'}}>
-        <div className="my_cart">
+      <div className="cart_pro">
+        <div className="my_cart_pro">
           {cartItems.length === 0 ? (
             <p>Không có sản phẩm trong giỏ hàng</p>
           ) : (
             <div>
               {cartItems.map((item) => (
-                <div className="cart_item" key={item.id}>
-                  <img src={item.avatar || ""} alt={item.name} />
-                  <div className="column box-font">
-                    <div>
-                      <div className="fontchu1">{item.name}</div>
-                      <div className="fontchu2">${item.price}</div>
+                <div className="cart_item_pro" key={item.id}>
+                    <img src={item.avatar}/>
+                    <div className="cart_pro_in">
+                        <h2>{item.name}</h2>
+                        <button onClick={() => handleRemoveItem(item.id)}>Remove</button>
                     </div>
-                    <div className="them_xoa">
-                      <div className="quantity-control">
-                        <button onClick={() => handleDecreaseQuantity(item.id)}>
-                          -
-                        </button>
+                    <div className="cart_an">
+                        <button onClick={() => handleDecreaseQuantity(item.id)}>-</button>
                         <span>{item.quantity}</span>
-                        <button onClick={() => handleIncreaseQuantity(item.id)}>
-                          +
-                        </button>
-                      </div>
-                      <button
-                        className="remove-item"
-                        onClick={() => handleRemoveItem(item.id)}
-                      >
-                        Xóa
-                      </button>
+                        <button style={{borderRadius : '0px 4px 4px 0px'}} onClick={() => handleIncreaseQuantity(item.id)}>+</button>
                     </div>
-                  </div>
+                    <div className="cart_gia">
+                        <p>{(item.price * item.quantity).toLocaleString("vi-VN")}đ</p>
+                    </div>
                 </div>
               ))}
             </div>
           )}
         </div>
-        <div className="table_Totalprice">
-          <div className="TOTAL">Total : </div>
-          <table>
-            <tbody className="tittle">
-              {cartItems.map((item) => (
-                <tr key={item.id}>
-                  <td>
-                    <div className="product-name3">{item.name}</div>
-                    <div className="product-price3">
-                      ${(item.price * item.quantity).toFixed(2)}
-                    </div>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <div className="box_checkout">
-            <div className="Title">
-              <div className="total_and">TOTAL: </div>
-              <div className="total_price">${Totalprice}</div>
-            </div>
-            <button className="checkout" onClick={HandleCheckout}>
-              Check out
-            </button>
-          </div>
+        <div className="total_pro">
+            <button onClick={HandleBack}>Continue Shopping</button>
+            <button onClick={HandleCheckout} style={{backgroundColor : '#4caf50'}}>Check out</button>
         </div>
       </div>
       <footer className="footer">
@@ -111,8 +82,8 @@ function CartH() {
           <div className="footer_main">
             <h2>Gửi phản hồi </h2>
             <div className="invanput">
-              <input type="text" placeholder="Vui lòng nhập vào đây"></input>
-              <button>Gửi</button>
+            <input type="text" placeholder="Vui lòng nhập vào đây" ></input>
+            <button>Gửi</button>
             </div>
           </div>
           <div className="footer_text">
@@ -135,4 +106,4 @@ function CartH() {
   );
 }
 
-export default CartH;
+export default HCart;

@@ -15,7 +15,7 @@ import ProductCart from "./Components/Hoang/ProductCart";
 import ProductCheckout from "./Components/Hoang/ProductCheckout";
 import Smartphone from "./Components/Hiep/Smartphone"
 import Chitietsanpham from "./Components/Hiep/Chitietsanpham";
-import CartH from "./Components/Hiep/Cart";
+import HCart from "./Components/Hiep/Cart"
 import HomeD from "./Components/Dat/Home";
 import DesD from "./Components/Dat/Des";
 import PayD from "./Components/Dat/Pay";
@@ -68,6 +68,7 @@ function App() {
             <Route path="/hiep" element={<Smartphone/>}/>
             <Route path="/Chitietsanpham/:id" element={<Chitietsanpham/>}/>
             <Route path="/hiep" element={<Smartphone/>}/>
+            <Route path="/CartH" element={<HCart/>}/>
             <Route path="/dat" element={<HomeD/>}/>
             <Route path="/desD/:id" element={<DesD/>}/>
             <Route path="/duc" element={<Homed/>}/>

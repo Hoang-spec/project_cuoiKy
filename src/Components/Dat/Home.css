@@ -131,9 +131,9 @@ ul {
 }
 
 .products-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
+  width: 1440px;
+  flex-wrap: wrap;
+  display: flex;
   padding: 20px 0;
 }
 

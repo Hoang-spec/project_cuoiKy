@@ -42,7 +42,7 @@ function Chitietsanpham() {
   const handleAddtocart = () => {
     if (product) {
       addToCart(product);
-      navigate("/Cart");
+      navigate("/CartH");
     }
   };
   return (

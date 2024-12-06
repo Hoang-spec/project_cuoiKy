@@ -37,7 +37,7 @@ function HomeD() {
     (async () => {
       try {
         const response = await fetch(
-          "https://674c7e4c54e1fca9290cb9f4.mockapi.io/chien"
+          "https://6745b5c0512ddbd807f9480f.mockapi.io/codelo/taiphone"
         );
         const data = await response.json();
         setProducts(data.sort(() => 0.5 - Math.random())); // Trộn ngẫu nhiên
@@ -53,7 +53,7 @@ function HomeD() {
   );
 
   return (
-    <div className="Home" style={{backgroundColor : 'black'}}>
+    <div className="Home">
       <header
         className="header"
         style={{ backgroundImage: `url(${nen})`, width: "1440px" }}
@@ -80,7 +80,6 @@ function HomeD() {
             {filteredProducts.length > 0 ? (
               filteredProducts.map((product) => (
                 <div style={{width : '350px',
-                  backgroundColor : 'pink'
                 }} className="product-card" key={product.id}>
                   <img src={product.avatar} alt={product.name} />
                   <h3 style={{fontSize : '16px'}}>{product.name}</h3>

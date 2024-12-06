@@ -21,7 +21,7 @@
 }
 .box-right img{
     width: 650px;
-    /* animation: bounce 2s infinite ease-in-out; */
+    animation: bounce 2s infinite ease-in-out;
     margin-top: 200px;
     margin-left: 100px;
 }

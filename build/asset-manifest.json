@@ -1,21 +1,32 @@
 {
   "files": {
-    "main.css": "/static/css/main.213c076f.css",
-    "main.js": "/static/js/main.736ef7c8.js",
+    "main.css": "/static/css/main.09eac35a.css",
+    "main.js": "/static/js/main.a064447f.js",
     "static/js/453.7a0f4abf.chunk.js": "/static/js/453.7a0f4abf.chunk.js",
     "static/media/baner.png": "/static/media/baner.7897cda99e42643a330a.png",
+    "static/media/bgtet.png": "/static/media/bgtet.7a69aa4d92849b7a68de.png",
     "static/media/Untitled-Photoroom.png": "/static/media/Untitled-Photoroom.bb803093c2dd2495ec5a.png",
     "static/media/lenovo-legion-5-pro-core-i7-11800h-16gb-512gb-rtx-3060-6gb-3678-3-Photoroom.png": "/static/media/lenovo-legion-5-pro-core-i7-11800h-16gb-512gb-rtx-3060-6gb-3678-3-Photoroom.24b8fa9339e368c28756.png",
     "static/media/Remove-bg.ai_1731470373511.png": "/static/media/Remove-bg.ai_1731470373511.f9592b406a4f9db5ce70.png",
+    "static/media/9-Photoroom.png": "/static/media/9-Photoroom.87eee040ee441c281451.png",
     "static/media/removed-background.png": "/static/media/removed-background.f1b04e9ef7cfc3587f98.png",
+    "static/media/banner3.png": "/static/media/banner3.732e85053f812b2fd7c0.png",
+    "static/media/blue.png": "/static/media/blue.1b4290c9d285b7ff282f.png",
+    "static/media/banner2.jpg": "/static/media/banner2.082daa92c02bb7c28dcc.jpg",
     "static/media/pngtree-smiling-girl-point-up-with-fingers-png-image_8800296.png": "/static/media/pngtree-smiling-girl-point-up-with-fingers-png-image_8800296.c184e6c2c9fac829016e.png",
+    "static/media/res.png": "/static/media/res.e4de62e9149db3470578.png",
+    "static/media/dongho.png": "/static/media/dongho.44ff9295d39d275e71f0.png",
+    "static/media/shipper.webp": "/static/media/shipper.3519e25d23acff75dee1.webp",
+    "static/media/OIP.jpg": "/static/media/OIP.cc4e2ad62476c40bade8.jpg",
+    "static/media/fotter.png": "/static/media/fotter.26f37e3a733c7ff5ea47.png",
+    "static/media/red.jpg": "/static/media/red.2c339fc3528a0723d5c3.jpg",
     "index.html": "/index.html",
-    "main.213c076f.css.map": "/static/css/main.213c076f.css.map",
-    "main.736ef7c8.js.map": "/static/js/main.736ef7c8.js.map",
+    "main.09eac35a.css.map": "/static/css/main.09eac35a.css.map",
+    "main.a064447f.js.map": "/static/js/main.a064447f.js.map",
     "453.7a0f4abf.chunk.js.map": "/static/js/453.7a0f4abf.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.213c076f.css",
-    "static/js/main.736ef7c8.js"
+    "static/css/main.09eac35a.css",
+    "static/js/main.a064447f.js"
   ]
 }

@@ -59,7 +59,7 @@ function DesD() {
 
   // Hiển thị giao diện chi tiết sản phẩm
   return (
-    <div className="product-detail" style={{backgroundColor : 'black'}}>
+    <div className="product-detail">
       <div className="product-content">
         <div className="product-image">
           <img src={product.avatar} alt={product.name} />

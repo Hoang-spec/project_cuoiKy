@@ -80,6 +80,7 @@ function ProductShow(){
               <h1>Siêu Sale Tết</h1>
               <div  className="noi_bat">
               {products.map((pro) => (
+                <Link to={`/Titail/${pro.id}`}>
                 <div className="hoang_product" key={pro.id}>
                   <img src={pro.avatar}/>
                       <h4 style={{color : 'black'}}>{pro.name}</h4>
@@ -93,6 +94,7 @@ function ProductShow(){
                           </Link>
                       </div>
                 </div>
+                </Link>
               ))}
               </div>
             </div>
@@ -101,8 +103,10 @@ function ProductShow(){
             <input type="search" placeholder="Nhap vao san pham can tim"
             onChange={(e) => setQuery(e.target.value)}/>
                 <div className="main_a">
+                  
                         <div className="hoang_products">
                             {filteredDis1.map((product) => (
+                              <Link to={`/Titail/${product.id}`}>
                                 <div className="hoang_product" key={product.id}>
                                     <img src={product.avatar}/>
                                     <h4 style={{color : 'black'}}>{product.name}</h4>
@@ -116,6 +120,7 @@ function ProductShow(){
                                           </Link>
                                     </div>
                                 </div>
+                                </Link>
                             ))}
                         </div>
                 </div>
@@ -123,6 +128,7 @@ function ProductShow(){
                     <h1 style={{color : 'black'}}>Sell off</h1>
                     <div className="hoang_products">
                         {filteredDis2.map((product) => (
+                          <Link to={`/Titail/${product.id}`}>
                             <div className="hoang_product" key={product.id}
                             style={{borderRadius : '10px 30px 10px 10px'}} >
                                 <div className="discount"> Giảm 10%</div>
@@ -150,6 +156,7 @@ function ProductShow(){
                                           </Link>
                                     </div>
                             </div>
+                            </Link>
                         ))}
                     </div>
                 </dic>

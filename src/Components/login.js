@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import "../App.css";
-import user from "../images/pngtree-smiling-girl-point-up-with-fingers-png-image_8800296.png"
+import user from "../images/pngtree-smiling-girl-point-up-with-fingers-png-image_8800296.png";
 import axios from "axios";
 
 function Login() {
@@ -16,12 +15,19 @@ function Login() {
     setError(""); // Xóa lỗi trước đó
 
     try {
-      const response = await axios.post("http://localhost:5000/api/login", {
-        username: data.name,
-        password: data.password,
-      });
+      const response = await axios.post(
+        "https://674c6f7354e1fca9290c8d3f.mockapi.io/login", // Đổi API URL cho đúng
+        {
+          username: data.name,
+          password: data.password,
+        }
+      );
+
       console.log(response.data); // In ra dữ liệu phản hồi từ server
+
       if (response.status === 200) {
+        // Lưu thông tin nếu cần (ví dụ: token)
+        localStorage.setItem("token", response.data.token);
         navigate("/"); // Chuyển hướng tới trang Home
       }
     } catch (error) {
@@ -49,17 +55,17 @@ function Login() {
               <label>Email or Phone Number</label>
               <input
                 type="text"
-                {...register('name', { required: 'Vui lòng nhập Email hoăc Phone' })} 
+                {...register("name", { required: "Vui lòng nhập Email hoăc Phone" })}
               />
-              {errors.name && <span style={{color : 'red'}}>{errors.name.message}</span>}
+              {errors.name && <span style={{ color: "red" }}>{errors.name.message}</span>}
             </div>
             <div className="box-email-password">
               <label>Password</label>
               <input
                 type="password"
-                {...register('password', { required: 'Vui lòng nhập Password' })} 
+                {...register("password", { required: "Vui lòng nhập Password" })}
               />
-              {errors.password && <span style={{color : 'red'}}>{errors.password.message}</span>}
+              {errors.password && <span style={{ color: "red" }}>{errors.password.message}</span>}
             </div>
             {error && <p className="error-message">{error}</p>}{" "}
             {/* Hiển thị lỗi */}
@@ -71,7 +77,9 @@ function Login() {
                 {loading ? "Đang xử lý..." : "LOGIN"}
               </button>
             </div>
-            <Link to='/SignIn' style={{color : '#4caf50'}}>Sign in</Link>
+            <Link to="/SignIn" style={{ color: "#4caf50" }}>
+              Sign in
+            </Link>
           </form>
         </div>
       </div>

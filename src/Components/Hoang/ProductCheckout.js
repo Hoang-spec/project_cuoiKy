@@ -1,9 +1,11 @@
-import { CartContext } from "./CartContext";
+
+import { CartContext } from "../CartContext";
 import { useEffect, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import dongho from "../image/dongho.png"
 
-function Checkout() {
+function ProductCheckout() {
   const { register, handleSubmit, formState: { errors } } = useForm();
   const navigate = useNavigate();
   const [userName, setUserName] = useState(0);
@@ -24,7 +26,8 @@ function Checkout() {
   }
 
   return (
-    <div style={{marginTop : '100px'}} className="Checkout">
+    <div className="Checkout">
+    <h1>CHECK OUT</h1>
       <form onSubmit={handleSubmit(xong)}>
         <main>
           <div className="section">
@@ -95,7 +98,7 @@ function Checkout() {
             </section>
           </div>
 
-          <section style={{marginTop : '50px'}} className="section_total">
+          <section className="section_total">
             <h1 style={{fontSize : '18px'}}>TỔNG TIỀN</h1>
             <p>{userName.toLocaleString("vi-VN")}đ</p>
             <div className="btn">
@@ -134,4 +137,4 @@ function Checkout() {
   );
 }
 
-export default Checkout;
+export default ProductCheckout;

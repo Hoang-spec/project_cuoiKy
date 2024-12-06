@@ -8,8 +8,6 @@ import buy from "../images/buy_online.png"
 import pay from "../images/pay_online.png"
 import ship from "../images/shipper.jpg"
 import banner from "../images/baner.png"
-
-import "../App.css";
 function Home() {
   const [products, setProducts] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");

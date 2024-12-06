@@ -1,0 +1,193 @@
+.smartPhone{
+    margin-top: 70px;
+}
+.banner{
+    width: 1440px;
+    height: 500px;
+    display: flex;
+}
+.box-left{
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.box-left img{
+    width: 100px;
+}
+.box-right{
+    width: 700px;
+}
+.box-right img{
+    width: 650px;
+    /* animation: bounce 2s infinite ease-in-out; */
+    margin-top: 200px;
+    margin-left: 100px;
+}
+@keyframes bounce {
+    0%, 100% {
+      transform: translateY(0); /* Vị trí ban đầu */
+    }
+    50% {
+      transform: translateY(-20px); /* Nhảy lên */
+    }
+  }
+  .box-spnb3{
+    display: flex;
+    width: 400px;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .box-spnb1{
+    display: flex;
+    margin-top: 100px;
+  }
+  .dongho{
+    display: flex;
+    justify-content: end;
+    width: 1000px;
+  }
+  .box-spnb2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  .product-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    margin-top: 10px;
+    margin: 5px;
+  }
+  .product-card h3{
+    color: black;
+    font-size: 16px;
+  }
+  .product-card p{
+    font-size: 18px;
+
+  }
+  .addtocart{
+    width: 200px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-weight: 600;
+    background-color: #64C077;
+    color: white;
+  }
+  .addtocart:hover{
+    color: white;
+
+  }
+  .list-sp{
+    
+  }
+  .box-timkiem{
+    display: flex;
+    width: 1440px;
+  }
+  .box-timkiem input{
+    width: 600px;
+    height: 60px;
+    border-radius: 4px;
+    margin: 20px 0px 20px 20px;
+    padding-left: 20px;
+  }
+  .box-sel{
+    height: 60px;
+    width: 200px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding-left: 20px;
+    border-radius: 4px;
+  }
+  .list-products{
+    display: flex;
+    width: 1440px;
+    flex-wrap: wrap;
+  }
+  .btn-more{
+    width: 200px;
+    height: 50px;
+    background-color: #64C077;
+    border: none;
+    border-radius: 4px;
+    margin: 20px;
+    color: white;
+    font-weight: bold;
+  }
+  .dichvu{
+
+  }
+  .list-dichvu{
+    display: flex;
+    width: 1440px;
+    justify-content: space-around;
+  }
+  .box-dichvu{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .box-dichvu img{
+    width: 200px;
+  }
+  .box-dichvu p{
+    width: 300px;
+    text-align: center;
+  }
+  .font-dichvu2{
+    color: black;
+    margin: 20px;
+  }
+  .question{
+    width: 1440px;
+    background-color: red;
+  }
+  .box-chitiet{
+    margin-top: 80px;
+  }
+  .box-chitiet2{
+    display: flex;
+  }
+  .box-chitiet5{
+    margin-left: 20px;
+    margin-top: 50px;
+  }
+  .box-chitiet5 h1{
+    color: black;
+    font-size: 18px;
+  }
+  .icon-chitiet{
+    color: yellow;
+  }
+  .price-chitietsp{
+    font-size: 18px;
+    color: black;
+  }
+  .price-chitietsp2{
+    color: red;
+  }
+  .btn-chitietadd{
+    width: 300px;
+    height: 50px;
+    border: none;
+    border-radius: 4px;
+    margin-top: 20px;
+    background-color: #64C077;
+    color: white;
+  }
+  .box-chitiet4{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 400px;
+    margin-top: 20px;
+  }

@@ -1,0 +1,81 @@
+/* Container chính của trang thanh toán */
+.pay-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  margin-top: 100px;
+}
+
+/* Tiêu đề chính */
+.pay-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Chi tiết sản phẩm */
+.pay-order-details {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.pay-order-details h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+}
+
+.pay-order-details p {
+  font-size: 16px;
+  color: #555;
+  margin-top: 5px;
+}
+
+/* Nhóm form nhập thông tin */
+.pay-form-group {
+  margin-bottom: 20px;
+}
+
+.pay-form-group label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+/* Input và select */
+.pay-input,
+.pay-select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  font-size: 16px;
+}
+
+/* Nút thanh toán */
+.pay-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.pay-button:hover {
+  background-color: #45a049;
+}

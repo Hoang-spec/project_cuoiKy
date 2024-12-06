@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import { CartProvider } from "./Components/CartContext";
-import "./App.css";
 import Home from "./Components/Home";
 import Login from "./Components/login";
 import SignUp from "./Components/SingIn";
@@ -9,6 +8,23 @@ import Cart from "./Components/Cart";
 import Checkout from "./Components/Checkout";
 import anh from "./images/Untitled-Photoroom.png"
 import Admin from "./Components/Admin";
+import ProductShow from "./Components/Hoang/ProductShow";
+import ProductDetail from "./Components/Des";
+import ProductTetail from "./Components/Hoang/ProductTetail";
+import ProductCart from "./Components/Hoang/ProductCart";
+import ProductCheckout from "./Components/Hoang/ProductCheckout";
+import Smartphone from "./Components/Hiep/Smartphone"
+import Chitietsanpham from "./Components/Hiep/Chitietsanpham";
+import CartH from "./Components/Hiep/Cart";
+import HomeD from "./Components/Dat/Home";
+import DesD from "./Components/Dat/Des";
+import PayD from "./Components/Dat/Pay";
+import Homed from "./Components/Duc/Home";
+import Cartd from "./Components/Duc/Cart";
+import CartT from "./Components/Duc/Cart";
+import PayT  from "./Components/Duc/Pay";
+
+
 function App() {
 
   return (
@@ -23,11 +39,17 @@ function App() {
               <Link to="/" className="nav_link">
                 Home
               </Link>
-              <a>Laptop</a>
-              <a>Television</a>
-              <a>SmartPhone</a>
-              <Link to="/cart" className="nav_cart">
-                Cart
+              <Link to="/hoang" className="nav_link">
+                Watch
+              </Link>
+              <Link to="/hiep" className="nav_link">
+                SmartPhone
+              </Link>
+              <Link to="/dat" className="nav_link">
+                HeadPhone
+              </Link>
+              <Link to="/duc" className="nav_link">
+                Laptop
               </Link>
             </div>
           </nav>
@@ -39,7 +61,20 @@ function App() {
             <Route path="/SignIn" element={<SignUp />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/Admin" element={<Admin/>}/>
-
+            <Route path="/hoang" element={<ProductShow/>}/>
+            <Route path="/cart_pro" element={<ProductCart/>}/>
+            <Route path="/Titail/:products_id" element={<ProductTetail />} />
+            <Route path="/checkout_pro" element={<ProductCheckout/>}/>
+            <Route path="/hiep" element={<Smartphone/>}/>
+            <Route path="/Chitietsanpham/:id" element={<Chitietsanpham/>}/>
+            <Route path="/hiep" element={<Smartphone/>}/>
+            <Route path="/dat" element={<HomeD/>}/>
+            <Route path="/desD/:id" element={<DesD/>}/>
+            <Route path="/duc" element={<Homed/>}/>
+            <Route path="/payD" element={<PayD/>}/>
+            <Route path="/payT" element={<PayT/>}/>
+            <Route path="/product/:id" element={<Cartd/>}/>
+            <Route path="/product/:id" element={<CartT/>}/>
           </Routes>
         </div>
       </Router>

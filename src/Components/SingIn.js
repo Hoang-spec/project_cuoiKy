@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import user from "../images/pngtree-smiling-girl-point-up-with-fingers-png-image_8800296.png"
 import axios from "axios";
-import "../App.css";
+
 
 function Singin() {
   const {
@@ -50,7 +50,7 @@ function Singin() {
           <div className="box-avatar">
             <img src={user} alt="User Avatar" />
             <h1>SIGN IN IN HERE</h1>
-          </div>
+          </div>z
           <form className="box-form" onSubmit={handleSubmit(handleRegister)}>
             <h2>SIGN IN</h2>
             <div className="box-email-password">

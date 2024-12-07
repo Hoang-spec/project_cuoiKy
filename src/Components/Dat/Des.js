@@ -81,7 +81,8 @@ function DesD() {
           <button style={{
             width : '200px',
             height : '50px',
-            backgroundColor : 'red'
+            border : 'none',
+            backgroundColor : '#4caf50'
           }} onClick={handleBuyNow}>
             Mua ngay
           </button>

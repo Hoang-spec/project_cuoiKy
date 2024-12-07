@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import React from "react";
-import banner from "../../images/baner.png"
+import banner from "../../images/z6083161069072_2e5afbdec298dcf096a52ac77dba7de6.jpg"
 
 import "./Home.css"
 
@@ -30,13 +30,11 @@ function HomeT() {
   );
 
   return (
-    <div className="Home">
+    <div className="Home" >
       <header
         className="header"
-        style={{
-          backgroundColor : 'black',
-          width: "1440px",
-        }}
+        style={{backgroundImage: `url(${banner})`,
+        width : '1440px'}}
       >
         <div className="header_main">
           <div className="header_info">
@@ -71,8 +69,8 @@ function HomeT() {
                 <h2>{product.name}</h2>
                 <p>Giá: {product.price.toLocaleString()} VNĐ</p>
                 <div className="nutan">
-                  <Link to={`/product/${product.id}`} className="toan">
-                    Chi tiết sản phẩm
+                  <Link to={`/product/${product.id}`} className="toan" style={{textAlign : 'center'}}>
+                   Description
                   </Link>
                 </div>
               </div>

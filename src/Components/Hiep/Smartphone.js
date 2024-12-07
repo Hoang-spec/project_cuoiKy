@@ -9,8 +9,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import logo from "../image/Untitled-Photoroom.png";
 import ship from "../image/shipper.webp";
 import res from "../image/res.png";
-import footer from "../../images/fotter.png"
+import footer from "../image/fuer.jpg"
 import baohanh from "../image/baohanh.png";
+import banner from "../../images/baner.png"
 
 import "./Smartphone.css"
 
@@ -113,15 +114,16 @@ function App() {
   }, []);
 
   return (
-    <div className="smartPhone">
-      <div className="banner ">
+    <div className="smartPhone" >
+      <div className="banner " style={{backgroundImage: `url(${banner})`,
+                                          width : '1440px'}}>
         <div className="box-left">
           <div>
             <img src={logo} alt="" className="logowed" />
           </div>
           <div className="tittlebig">
-            <h1 className="Hphone">Nhom Lụm</h1>
-            <p className="tittle">Địa điểm bán điện thoại uy tín</p>
+            <h1 className="Hphone" style={{color : 'white'}}>Nhom Lụm</h1>
+            <p className="tittle" style={{color : 'white'}}>Địa điểm bán điện thoại uy tín</p>
           </div>
         </div>
         <div className="box-right">
@@ -162,7 +164,11 @@ function App() {
         </div>
         <div className="box-spnb2">
           {products.length > 0 ? (
+
             products.map((product) => (
+              <Link
+              to={`/Chitietsanpham/${product.id}`}
+            >
               <div key={product.id} className="product-card">
                 <img
                   src={product.avatar}
@@ -191,13 +197,18 @@ function App() {
                   Thêm vào giỏ hàng
                 </Link>
               </div>
+              </Link>
             ))
           ) : (
             <p>Đang tải sản phẩm...</p>
           )}
         </div>
         <div className="list-sp">
-          <div style={{marginLeft : '50px'}} className="spcct">Sản phẩm của chúng tôi</div>
+          <div style={{
+            fontSize : '36px',
+            margin : '20px',
+            fontWeight : '900'
+          }} className="spcct">Sản phẩm của chúng tôi</div>
           <div className="box-timkiem">
             <input
               type="text"
@@ -233,7 +244,11 @@ function App() {
           </div>
           <div className="list-products">
             {filteredProduct.length > 0 ? (
+
               filteredProduct.slice(0, More).map((product2) => (
+                <Link
+                to={`/Chitietsanpham/${product2.id}`}
+              >
                 <div key={product2.id} className="product-card">
                   <img
                     src={product2.avatar}
@@ -254,6 +269,7 @@ function App() {
                     Thêm vào giỏ hàng
                   </Link>
                 </div>
+                </Link>
               ))
             ) : (
               <p>Không có sản phẩm</p>
@@ -340,8 +356,8 @@ function App() {
           </a>
         </div>
       </div>
-      <div className="footer">
-        <img src={footer}/>
+      <div >
+        <img src={footer} style={{width : '1440px'}}/>
       </div>
       <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

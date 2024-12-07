@@ -149,7 +149,8 @@
   }
   .question{
     width: 1440px;
-    background-color: red;
+    margin-top: 50px;
+    margin-bottom: 50px;
   }
   .box-chitiet{
     margin-top: 80px;

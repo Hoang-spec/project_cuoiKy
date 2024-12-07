@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import user from "../images/pngtree-smiling-girl-point-up-with-fingers-png-image_8800296.png"
-import axios from "axios";
-
+import user from "../images/pngtree-smiling-girl-point-up-with-fingers-png-image_8800296.png";
 
 function Singin() {
   const {
@@ -17,6 +15,7 @@ function Singin() {
   const handleRegister = async (data) => {
     const { username, gmail, password, reenteredPassword } = data;
 
+    // Kiểm tra mật khẩu có khớp không
     if (password !== reenteredPassword) {
       alert("Mật khẩu không khớp. Vui lòng nhập lại.");
       return;
@@ -24,20 +23,32 @@ function Singin() {
 
     try {
       setLoading(true);
-      const response = await axios.post("http://localhost:5000/api/register", {
-        username,
-        gmail,
-        password,
+      // Gửi dữ liệu đăng ký tới MockAPI bằng fetch
+      const response = await fetch("https://674c6f7354e1fca9290c8d3f.mockapi.io/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name : username,
+          gmail,
+          password,
+        }),
       });
-      console.log(response.data.message);
-      navigate("/"); // Chuyển hướng đến trang Home
-    } catch (error) {
-      if (error.response) {
-        console.error(error.response.data.message);
-        alert(error.response.data.message);
-      } else {
-        alert("Lỗi đăng ký, vui lòng thử lại.");
+
+      // Kiểm tra phản hồi từ API
+      if (!response.ok) {
+        throw new Error("Lỗi đăng ký, vui lòng thử lại.");
       }
+
+      const result = await response.json();
+      console.log(result);  // In ra thông tin người dùng đã được thêm
+      alert("Đăng ký thành công!");
+      navigate("/"); // Chuyển hướng đến trang Home sau khi đăng ký thành công
+    } catch (error) {
+      // Nếu có lỗi xảy ra
+      console.error(error);
+      alert(error.message || "Lỗi đăng ký, vui lòng thử lại.");
     } finally {
       setLoading(false);
     }
@@ -50,7 +61,7 @@ function Singin() {
           <div className="box-avatar">
             <img src={user} alt="User Avatar" />
             <h1>SIGN IN IN HERE</h1>
-          </div>z
+          </div>
           <form className="box-form" onSubmit={handleSubmit(handleRegister)}>
             <h2>SIGN IN</h2>
             <div className="box-email-password">
@@ -87,31 +98,32 @@ function Singin() {
               />
               {errors.password && (
                 <span style={{ color: "red" }}>{errors.password.message}</span>
-              )}</div>
-              <div className="box-email-password">
-                <label>Re-enter Password</label>
-                <input
-                  type="password"
-                  {...register("reenteredPassword", {
-                    required: "Vui lòng nhập lại mật khẩu",
-                  })}
-                />
-                {errors.reenteredPassword && (
-                  <span style={{ color: "red" }}>
-                    {errors.reenteredPassword.message}
-                  </span>
-                )}
-              </div>
-              <div className="box-button-login">
-                <button type="submit" disabled={loading}>
-                  {loading ? "Đang xử lý..." : "Sign in"}
-                </button>
-              </div>
-            </form>
-          </div>
+              )}
+            </div>
+            <div className="box-email-password">
+              <label>Re-enter Password</label>
+              <input
+                type="password"
+                {...register("reenteredPassword", {
+                  required: "Vui lòng nhập lại mật khẩu",
+                })}
+              />
+              {errors.reenteredPassword && (
+                <span style={{ color: "red" }}>
+                  {errors.reenteredPassword.message}
+                </span>
+              )}
+            </div>
+            <div className="box-button-login">
+              <button type="submit" disabled={loading}>
+                {loading ? "Đang xử lý..." : "Sign in"}
+              </button>
+            </div>
+          </form>
         </div>
       </div>
-    );
-  }
-  
-  export default Singin;
+    </div>
+  );
+}
+
+export default Singin;

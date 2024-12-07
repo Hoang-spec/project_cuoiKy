@@ -4,12 +4,28 @@ import { Link } from "react-router-dom";
 import { CartContext } from "../CartContext";
 
 function ProductTetail() {
+  const [products, setProducts] = useState([]);
   const { products_id } = useParams(); // Lấy id sản phẩm từ URL
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true); // Biến để hiển thị trạng thái tải
   const { addToCart } = useContext(CartContext);
   const navigate = useNavigate();
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch(
+          "https://672d7fa3fd897971564299a4.mockapi.io/product"
+        );
+        let data = await response.json();
+        data = data.sort(() => 0.5 - Math.random());
+        setProducts(data);
+      } catch (error) {
+        console.error("Lỗi khi lấy sản phẩm:", error);
+      }
+    };
 
+    fetchProducts();
+  }, []);
   useEffect(() => {
     const fetchProduct = async () => {
       try {
@@ -73,6 +89,20 @@ function ProductTetail() {
                 </div>
             </div>
             
+        </div>
+        <h1 style={{marginTop : '100px',
+          marginBottom : '50px',
+          color : 'black'
+        }}>SAN PHAM TUONG TU</h1>
+        <div className="product_them">
+
+          {products.slice(0, 4).map((pro) =>(
+            <div className="pro_them">
+              <img src={pro.avatar}/>
+              <h1>{pro.name}</h1>
+              <p style={{color : 'red'}}>{pro.price.toLocaleString("vi-VN")}đ</p>
+            </div>
+          ))}
         </div>
         <div className="Show_info">
             <div className="list_info">

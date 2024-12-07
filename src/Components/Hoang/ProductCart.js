@@ -40,10 +40,10 @@ function ProductCart() {
         <p style={{width : '600px',
             border : '1px solid red',
             height : '30px',
-            paddingTop : '5px',
             paddingLeft : '10px',
             borderRadius : '4px',
-            backgroundColor : '#F8D6D6'
+            backgroundColor : '#F8D6D6',
+            paddingBottom : '10px'
         }}>You’ve got FREE delivery. Start checkout now!</p>
       </div>
       <div className="cart_pro">
@@ -56,8 +56,10 @@ function ProductCart() {
                 <div className="cart_item_pro" key={item.id}>
                     <img src={item.avatar}/>
                     <div className="cart_pro_in">
-                        <h2>{item.name}</h2>
-                        <button onClick={() => handleRemoveItem(item.id)}>Remove</button>
+                        <h2 style={{color : 'black'}}>{item.name}</h2>
+                        <button style={{backgroundColor  :'red',
+                          color : 'white'
+                        }} onClick={() => handleRemoveItem(item.id)}>Remove</button>
                     </div>
                     <div className="cart_an">
                         <button onClick={() => handleDecreaseQuantity(item.id)}>-</button>

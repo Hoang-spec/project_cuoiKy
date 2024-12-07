@@ -1512,9 +1512,37 @@
     background-color: #001E2B;
   }
   
-  
-  
-  
+  .product_them{
+    display: flex;
+    width: 1440px;
+    justify-content: space-around;
+
+  }
+  .pro_them{
+    width: 350px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+  }
+  .pro_them img{
+    width: 200px;
+    margin: 20px
+  }
+  .pro_them h1 ,p{
+    color: black;
+  }
+  .pro_them h1{
+    font-size: 18px;
+    width: 200px;
+    font-weight: 400;
+    height: 80px;
+  }
+  .pro_them:hover{
+    border:  1px solid #4caf50;
+
+  }
   
   
   

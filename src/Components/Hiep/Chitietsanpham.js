@@ -127,7 +127,7 @@ function Chitietsanpham() {
         </div>
       </div>
       <div className="box-chitiet4">
-        <h5>Thông tin chi tiết về sản phẩm</h5>
+        <h5 style={{color :  "black"}}>Thông tin chi tiết về sản phẩm</h5>
         <div>Màn hình 9.7 inch, cảm ứng điện dung đa điểm</div>
       </div>
 

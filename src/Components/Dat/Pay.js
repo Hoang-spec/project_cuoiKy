@@ -1,6 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import "./Pay.css"
+import "./Pay.css";
 
 function PayD() {
   const location = useLocation(); // Nhận dữ liệu từ Des
@@ -9,8 +9,25 @@ function PayD() {
   // Nhận dữ liệu sản phẩm từ state được truyền qua
   const { product, quantity, totalPrice } = location.state || {};
   const [address, setAddress] = useState("");
-  const [phone, setPhone] = useState("");
+  const [phoneNumber, setPhone] = useState("");
   const [paymentMethod, setPaymentMethod] = useState(""); // Phương thức thanh toán
+
+  // Kiểm tra và lấy dữ liệu từ localStorage
+  useEffect(() => {
+    const storedAddress = localStorage.getItem("address") || "";
+    const storedPhone = localStorage.getItem("phoneNumber") || "";
+    const storedPaymentMethod = localStorage.getItem("paymentMethod") || "";
+
+    // Hiển thị giá trị từ localStorage vào các input
+    console.log("Stored Address:", storedAddress);
+    console.log("Stored Phone:", storedPhone);
+    console.log("Stored Payment Method:", storedPaymentMethod);
+
+    // Cập nhật giá trị vào state nếu có
+    setAddress(storedAddress);
+    setPhone(storedPhone);
+    setPaymentMethod(storedPaymentMethod);
+  }, []); // Chạy khi component được mount
 
   // Xử lý logic nếu không có dữ liệu
   if (!product || !quantity || !totalPrice) {
@@ -19,21 +36,31 @@ function PayD() {
 
   // Hàm xử lý khi bấm "Thanh toán"
   const handlePayment = () => {
-    if (!address || !phone || !paymentMethod) {
+    if (!address || !phoneNumber || !paymentMethod) {
       alert(
         "Vui lòng nhập đầy đủ thông tin giao hàng và chọn phương thức thanh toán."
       );
       return;
     }
+
+    // Lưu thông tin vào localStorage
+    localStorage.setItem("address", address);
+    localStorage.setItem("phoneNumber", phoneNumber);
+    localStorage.setItem("paymentMethod", paymentMethod);
+
     // Chuyển hướng hoặc thực hiện logic thanh toán ở đây
     alert(`Đơn hàng của bạn đã được đặt! Tổng tiền: $${totalPrice}`);
     navigate("/"); // Quay về trang chính
   };
 
   return (
-    <div style={{width : '1440px',
-      color : 'white'
-    }} className="pay-container">
+    <div
+      style={{
+        width: "1440px",
+        color: "white",
+      }}
+      className="pay-container"
+    >
       <h1>Thanh toán sản phẩm</h1>
       <div className="pay-info">
         <p>Sản phẩm: {product.name}</p>
@@ -53,7 +80,7 @@ function PayD() {
         <input
           type="text"
           placeholder="Nhập số điện thoại..."
-          value={phone}
+          value={phoneNumber}
           onChange={(e) => setPhone(e.target.value)}
         />
         <label>Phương thức thanh toán:</label>
